@@ -38,13 +38,35 @@ for i in range (0,len(num)):
         print('Сейчас - {}'.format(state[i][1]))'''
         
 #задание 4 
-input_str = input ('Введите несколько слов, разделенные пробелами - ')
+'''input_str = input ('Введите несколько слов, разделенные пробелами - ')
 words = input_str.split()
 for i in range(0,len(words)):
     if len(words[i]) > 10:
         print('{}. {}'.format(i+1,words[i][0:10]))
     else:
-        print('{}. {}'.format(i+1,words[i]))
+        print('{}. {}'.format(i+1,words[i]))'''
+
+#задание 5
+rate = [7, 5, 3, 3, 2]
+elem = int(input('Введите новый элемент рейтинга, ' 
+                 'который является целым числом - '))
+length_start = len(rate)
+for i in range (0,len(rate)):
+    if rate[i] < elem:
+        rate.insert(i,elem)
+        break
+    elif rate[i] == elem:
+        if rate.count(elem) != 1:
+            rate.insert(i+rate.count(elem),elem)
+            break
+        else:
+            rate.insert(i+1,elem)
+            break
+    elif rate[i] > elem:
+        pass
+if length_start == len(rate):
+    rate.insert(len(rate),elem)
+print(rate)
 
 
 
